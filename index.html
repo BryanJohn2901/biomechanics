@@ -20,6 +20,8 @@
                             primary: '#EF482D',   
                             primaryHover: '#FF8815',
                             accent: '#0CC143',    
+                            success: '#0CC143',
+                            darkgray: '#05050A',
                             textPrimary: '#FFFFFF',
                             textSecondary: '#D0D5DD',
                             textMuted: '#667085',
@@ -28,6 +30,7 @@
                     },
                     fontFamily: {
                         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        oswald: ['Oswald', 'sans-serif'],
                     },
                     animation: {
                         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -45,7 +48,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -100,36 +103,35 @@
     <div class="custom-cursor hidden lg:block" id="cursor"></div>
     <div class="custom-cursor-dot hidden lg:block" id="cursor-dot"></div>
 
-    <nav class="hidden md:block fixed top-6 left-0 right-0 z-50 px-4 md:px-0" data-aos="fade-down" data-aos-duration="1000">
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-0 hidden md:block" data-aos="fade-down" data-aos-duration="1000">
         <div class="container mx-auto max-w-5xl">
-            <div class="relative flex items-center justify-between px-6 py-3 rounded-full bg-[#050505]/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-brand-primary/30">
-                
-                <a href="#hero" class="block hover:opacity-80 transition-opacity duration-300">
-                    <img src="./assets/logoPta.svg" alt="Personal Trainer Academy" width="160" height="48" class="h-10 md:h-12 w-auto" decoding="async" loading="eager">
+            <div class="relative flex items-center justify-between px-6 py-3 rounded-full glass-strong shadow-[0_8px_32px_0_rgba(0,0,0,0.8)] transition-all duration-300 hover:border-brand-primary/40 hover:shadow-[0_12px_40px_0_rgba(239,72,45,0.15)]">
+                <a href="#hero" class="block hover:opacity-80 transition-opacity duration-300 flex items-center shrink-0">
+                    <img src="./assets/logoPta.svg" alt="LOGO" class="h-10 w-auto">
                 </a>
-    
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="#sobre" class="text-[11px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors duration-300 relative group">
+                    <a href="#sobre" class="text-xs font-bold uppercase tracking-[0.1em] text-gray-400 hover:text-white transition-colors duration-300 relative group">
                         O Método
                         <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
                     </a>
-                    <a href="#conteudo" class="text-[11px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors duration-300 relative group">
-                        Conteúdo
+                    <a href="#conteudo" class="text-xs font-bold uppercase tracking-[0.1em] text-gray-400 hover:text-white transition-colors duration-300 relative group">
+                        Benefícios
                         <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
                     </a>
-                    <a href="#mentor" class="text-[11px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors duration-300 relative group">
-                        Mentor
+                    <a href="#mentor" class="text-xs font-bold uppercase tracking-[0.1em] text-gray-400 hover:text-white transition-colors duration-300 relative group">
+                        Especialista
                         <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
                     </a>
-                    <a href="#bonus" class="text-[11px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors duration-300 relative group">
-                        Bônus
+                    <a href="#ingressos" class="text-xs font-bold uppercase tracking-[0.1em] text-gray-400 hover:text-white transition-colors duration-300 relative group">
+                        Ingressos
                         <span class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
                     </a>
                 </div>
-    
-                <button type="button" onclick="abrirPopup();" class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-brand-primary px-8 py-2.5 transition-all duration-300 hover:shadow-[0_0_20px_rgba(239,72,45,0.6)] hover:scale-105 cursor-pointer border-0">
-                    <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-shimmer"></div>
-                    <span class="relative text-[10px] font-black uppercase tracking-[0.2em] text-white">Inscreva-se</span>
+                <button type="button" onclick="abrirPopup()" class="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-brand-primary hover:bg-brand-primaryHover px-10 py-4 transition-all duration-300 shadow-[0_0_30px_rgba(239,72,45,0.4)] hover:shadow-[0_0_50px_rgba(239,72,45,0.6)] hover:-translate-y-0.5 cursor-pointer border-0">
+                    <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                    <span class="relative text-xs font-bold uppercase tracking-[0.2em] text-white font-sans">
+                        Inscreva-se
+                    </span>
                 </button>
             </div>
         </div>
@@ -154,11 +156,11 @@
                     Imersão de 2 Dias
                 </div>
                 
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[1.05] text-white italic">
+                <h1 class="font-oswald text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold uppercase leading-[1.05] text-white">
                     Domine a <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-primaryHover">Biomecânica</span> na Prática.
                 </h1>
                 
-                <p class="text-lg md:text-xl text-brand-textSecondary max-w-2xl font-medium leading-relaxed">
+                <p class="text-lg md:text-xl text-brand-textSecondary max-w-2xl font-medium leading-relaxed font-sans">
                     2 dias intensivos para revolucionar seus atendimentos, otimizar resultados e elevar seu faturamento ao nível Elite da profissão.
                 </p>
                 
@@ -178,13 +180,13 @@
                         </div>
                         <div>
                             <div class="text-[10px] text-brand-textMuted uppercase font-bold tracking-[0.2em] mb-0.5">Localização</div>
-                            <div class="text-white font-bold text-sm">Indaiatuba - SP</div>
+                            <div class="text-white font-bold text-sm">São Paulo - SP</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="pt-4 w-full sm:w-auto">
-                    <button onclick="abrirPopup()" class="w-full sm:w-auto bg-brand-primary hover:bg-brand-primaryHover text-white font-black uppercase tracking-[0.1em] py-5 px-10 rounded-xl transition-all duration-300 shadow-[0_10px_30px_rgba(239,72,45,0.3)] hover:shadow-[0_15px_40px_rgba(255,136,21,0.5)] hover:-translate-y-1 flex items-center justify-center gap-3">
+                    <button onclick="abrirPopup()" class="w-full sm:w-auto bg-brand-primary hover:bg-brand-primaryHover text-white font-bold font-sans uppercase tracking-[0.1em] py-5 px-10 rounded-xl transition-all duration-300 shadow-[0_10px_30px_rgba(239,72,45,0.3)] hover:shadow-[0_15px_40px_rgba(255,136,21,0.5)] hover:-translate-y-1 flex items-center justify-center gap-3">
                         Quero Garantir Meu Lugar <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
@@ -207,22 +209,22 @@
                     <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=1000&auto=format&fit=crop" alt="Análise Biomecânica" class="relative object-cover w-full h-[500px] transition-transform duration-700 ease-out group-hover:scale-110" loading="lazy">
                 </div>
                 <div class="absolute -bottom-6 -right-6 glass-strong p-6 rounded-2xl border border-white/10 shadow-xl hidden sm:block transition-transform duration-500 group-hover:scale-105">
-                    <div class="text-4xl font-black text-brand-primary mb-1">+10k</div>
-                    <div class="text-[10px] font-bold text-white uppercase tracking-widest">Alunos Formados</div>
+                    <div class="font-oswald text-5xl font-bold text-brand-primary mb-1">+10k</div>
+                    <div class="text-[10px] font-bold text-white uppercase tracking-widest font-sans">Alunos Formados</div>
                 </div>
             </div>
             
             <div class="order-1 md:order-2 space-y-8" data-aos="fade-left">
                 <div>
-                    <h2 class="text-brand-primary text-xs font-bold uppercase tracking-[0.2em] mb-3">Conheça o Evento</h2>
-                    <h3 class="text-3xl md:text-5xl font-black uppercase leading-tight italic text-white">Domine a Biomecânica <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-textMuted to-white">na Prática</span></h3>
+                    <h2 class="text-brand-primary font-sans text-xs font-bold uppercase tracking-[0.2em] mb-3">Conheça o Evento</h2>
+                    <h3 class="font-oswald text-4xl md:text-5xl font-bold uppercase leading-tight text-white">Domine a Biomecânica <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-textMuted to-white">na Prática</span></h3>
                 </div>
                 
-                <p class="text-brand-textSecondary text-lg leading-relaxed">
+                <p class="text-brand-textSecondary font-sans text-lg leading-relaxed">
                     A Biomecânica é o diferencial dos grandes profissionais do mercado. Neste evento exclusivo, você aprenderá a utilizar a ciência do movimento para oferecer atendimentos mais seguros, assertivos e eficazes.
                 </p>
                 
-                <ul class="space-y-6">
+                <ul class="space-y-6 font-sans">
                     <li class="group flex items-start gap-4 cursor-default">
                         <div class="w-12 h-12 rounded-xl bg-[#14151e] border border-white/5 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-brand-primary group-hover:text-white group-hover:shadow-[0_0_15px_rgba(239,72,45,0.4)] group-hover:scale-110">
                             <i class="fas fa-users text-brand-primary text-xl transition-colors group-hover:text-white"></i>
@@ -253,7 +255,7 @@
                 </ul>
 
                 <div class="pt-4">
-                    <button onclick="abrirPopup()" class="w-full sm:w-auto bg-brand-primary hover:bg-brand-primaryHover text-white font-black uppercase tracking-[0.1em] py-4 px-10 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(239,72,45,0.3)] hover:shadow-[0_15px_30px_rgba(255,136,21,0.5)] hover:-translate-y-1">
+                    <button onclick="abrirPopup()" class="w-full sm:w-auto bg-brand-primary hover:bg-brand-primaryHover text-white font-bold font-sans uppercase tracking-[0.1em] py-4 px-10 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(239,72,45,0.3)] hover:shadow-[0_15px_30px_rgba(255,136,21,0.5)] hover:-translate-y-1">
                         Quero Participar <i class="fas fa-chevron-right ml-2 text-xs"></i>
                     </button>
                 </div>
@@ -266,26 +268,23 @@
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                <h2 class="text-brand-primary text-xs font-bold uppercase tracking-[0.2em] mb-3">Ementa do Evento</h2>
-                <h3 class="text-3xl md:text-5xl font-black uppercase leading-tight italic text-white">
+                <h2 class="text-brand-primary font-sans text-xs font-bold uppercase tracking-[0.2em] mb-3">Ementa do Evento</h2>
+                <h3 class="font-oswald text-4xl md:text-6xl font-bold uppercase leading-tight text-white">
                     O que você vai <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-primaryHover">Aprender na Prática?</span>
                 </h3>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-5xl mx-auto">
-                
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-5xl mx-auto font-sans">
                 <div class="bg-[#0b0c13] p-8 md:p-10 rounded-3xl border border-white/5 hover:border-brand-primary/30 transition-all duration-300 flex flex-col h-full shadow-lg group" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-14 h-14 rounded-2xl bg-[#14151e] border border-white/5 flex items-center justify-center text-brand-primary text-2xl mb-8 transition-all duration-300 group-hover:bg-brand-primary group-hover:text-white group-hover:shadow-[0_0_20px_rgba(239,72,45,0.4)] group-hover:scale-110">
                         <i class="fas fa-project-diagram"></i>
                     </div>
-                    
                     <div class="pl-4 mb-8 border-l-[3px] border-brand-primary/80">
-                        <h4 class="text-2xl font-black uppercase leading-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-primary transition-all duration-300">
+                        <h4 class="font-oswald text-3xl font-bold uppercase leading-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-primary transition-all duration-300">
                             Fundamentos <br>Avançados
                         </h4>
                     </div>
-                    
                     <ul class="space-y-5 text-sm text-brand-textSecondary mt-auto">
                         <li class="flex items-start gap-3 group/item">
                             <i class="fas fa-chevron-right text-brand-primary mt-1 text-[10px] group-hover/item:translate-x-1 transition-transform"></i> 
@@ -306,13 +305,11 @@
                     <div class="w-14 h-14 rounded-2xl bg-[#14151e] border border-white/5 flex items-center justify-center text-brand-primary text-2xl mb-8 transition-all duration-300 group-hover:bg-brand-primary group-hover:text-white group-hover:shadow-[0_0_20px_rgba(239,72,45,0.4)] group-hover:scale-110">
                         <i class="fas fa-heartbeat"></i>
                     </div>
-                    
                     <div class="pl-4 mb-8 border-l-[3px] border-brand-primary/80">
-                        <h4 class="text-2xl font-black uppercase leading-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-primary transition-all duration-300">
+                        <h4 class="font-oswald text-3xl font-bold uppercase leading-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-primary transition-all duration-300">
                             Treino e <br>Reabilitação
                         </h4>
                     </div>
-
                     <ul class="space-y-5 text-sm text-brand-textSecondary mt-auto">
                         <li class="flex items-start gap-3 group/item">
                             <i class="fas fa-chevron-right text-brand-primary mt-1 text-[10px] group-hover/item:translate-x-1 transition-transform"></i> 
@@ -333,13 +330,11 @@
                     <div class="w-14 h-14 rounded-2xl bg-[#14151e] border border-white/5 flex items-center justify-center text-brand-primary text-2xl mb-8 transition-all duration-300 group-hover:bg-brand-primary group-hover:text-white group-hover:shadow-[0_0_20px_rgba(239,72,45,0.4)] group-hover:scale-110">
                         <i class="fas fa-microscope"></i>
                     </div>
-                    
                     <div class="pl-4 mb-8 border-l-[3px] border-brand-primary/80">
-                        <h4 class="text-2xl font-black uppercase leading-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-primary transition-all duration-300">
+                        <h4 class="font-oswald text-3xl font-bold uppercase leading-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-primary transition-all duration-300">
                             Análise <br>de Dados
                         </h4>
                     </div>
-
                     <ul class="space-y-5 text-sm text-brand-textSecondary mt-auto">
                         <li class="flex items-start gap-3 group/item">
                             <i class="fas fa-chevron-right text-brand-primary mt-1 text-[10px] group-hover/item:translate-x-1 transition-transform"></i> 
@@ -360,13 +355,11 @@
                     <div class="w-14 h-14 rounded-2xl bg-[#14151e] border border-white/5 flex items-center justify-center text-brand-primary text-2xl mb-8 transition-all duration-300 group-hover:bg-brand-primary group-hover:text-white group-hover:shadow-[0_0_20px_rgba(239,72,45,0.4)] group-hover:scale-110">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    
                     <div class="pl-4 mb-8 border-l-[3px] border-brand-primary/80">
-                        <h4 class="text-2xl font-black uppercase leading-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-primary transition-all duration-300">
+                        <h4 class="font-oswald text-3xl font-bold uppercase leading-tight text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-primary transition-all duration-300">
                             Posicionamento <br>Elite
                         </h4>
                     </div>
-
                     <ul class="space-y-5 text-sm text-brand-textSecondary mt-auto">
                         <li class="flex items-start gap-3 group/item">
                             <i class="fas fa-chevron-right text-brand-primary mt-1 text-[10px] group-hover/item:translate-x-1 transition-transform"></i> 
@@ -385,7 +378,7 @@
             </div>
             
             <div class="mt-20 text-center" data-aos="zoom-in">
-                <button onclick="abrirPopup()" class="w-full sm:w-auto bg-brand-primary hover:bg-brand-primaryHover text-white font-black uppercase tracking-[0.1em] py-5 px-12 rounded-xl transition-all duration-300 shadow-[0_10px_30px_rgba(239,72,45,0.3)] hover:shadow-[0_15px_40px_rgba(255,136,21,0.5)] hover:-translate-y-1 inline-flex items-center justify-center gap-3 group">
+                <button onclick="abrirPopup()" class="w-full sm:w-auto bg-brand-primary hover:bg-brand-primaryHover text-white font-bold font-sans uppercase tracking-[0.1em] py-5 px-12 rounded-xl transition-all duration-300 shadow-[0_10px_30px_rgba(239,72,45,0.3)] hover:shadow-[0_15px_40px_rgba(255,136,21,0.5)] hover:-translate-y-1 inline-flex items-center justify-center gap-3 group">
                     Quero Aprender Com os Melhores <i class="fas fa-bolt group-hover:scale-110 transition-transform"></i>
                 </button>
             </div>
@@ -409,19 +402,19 @@
                     </div>
 
                     <div class="absolute -bottom-6 left-6 right-6 z-20 glass-strong p-4 rounded-xl border border-white/10 backdrop-blur-md">
-                        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-primary mb-1">Experiência Real</p>
-                        <p class="text-xs text-white font-black uppercase italic">+14 Anos Empreendendo</p>
+                        <p class="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-brand-primary mb-1">Experiência Real</p>
+                        <p class="font-oswald text-lg text-white font-bold uppercase">+14 Anos Empreendendo</p>
                     </div>
                 </div>
                 
                 <div class="w-full md:w-7/12 space-y-8" data-aos="fade-left">
                     <div>
-                        <div class="text-brand-primary text-xs font-bold uppercase tracking-[0.2em] mb-3">Seu Mentor</div>
-                        <h2 class="text-3xl md:text-5xl font-black uppercase mb-4 text-white italic">André <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-primaryHover">Albuquerque</span></h2>
+                        <div class="text-brand-primary font-sans text-xs font-bold uppercase tracking-[0.2em] mb-3">Seu Mentor</div>
+                        <h2 class="font-oswald text-4xl md:text-5xl lg:text-6xl font-bold uppercase mb-4 text-white">André <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-primaryHover">Albuquerque</span></h2>
                         <div class="w-20 h-1.5 bg-brand-primary rounded-full"></div>
                     </div>
                     
-                    <div class="space-y-6 text-brand-textSecondary leading-relaxed border-l-2 border-brand-primary/30 pl-6 text-base md:text-lg">
+                    <div class="space-y-6 text-brand-textSecondary font-sans leading-relaxed border-l-2 border-brand-primary/30 pl-6 text-base md:text-lg">
                         <p>
                             Professor de Educação física e <strong>Mestre em Biomecânica</strong>, André conecta com <span class="text-white font-bold underline decoration-brand-primary/50">mais de 200 mil pessoas</span> em suas redes sociais, compartilhando o conhecimento real do campo de batalha.
                         </p>
@@ -434,208 +427,11 @@
                     </div>
 
                     <div class="pt-4">
-                        <button onclick="abrirPopup()" class="w-full sm:w-auto bg-brand-primary hover:bg-brand-primaryHover text-white font-black uppercase tracking-[0.1em] py-4 px-10 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(239,72,45,0.2)] hover:shadow-[0_15px_30px_rgba(239,72,45,0.4)] hover:-translate-y-1 inline-flex items-center justify-center gap-3">
+                        <button onclick="abrirPopup()" class="w-full sm:w-auto bg-brand-primary hover:bg-brand-primaryHover text-white font-bold font-sans uppercase tracking-[0.1em] py-4 px-10 rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(239,72,45,0.2)] hover:shadow-[0_15px_30px_rgba(239,72,45,0.4)] hover:-translate-y-1 inline-flex items-center justify-center gap-3">
                             Quero Aprender com o André <i class="fas fa-chevron-right text-xs"></i>
                         </button>
                     </div>
                 </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="bonus" class="py-24 bg-[#080811] relative overflow-hidden border-b border-white/5">
-        
-        <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <div class="text-brand-primary text-xs font-bold uppercase tracking-[0.2em] mb-4">Entrega Exclusiva</div>
-                <h2 class="font-sans text-4xl md:text-6xl font-black text-white mb-4 uppercase italic">Pacote de <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-primaryHover">Bônus Elite</span></h2>
-                <p class="text-lg text-brand-textSecondary max-w-2xl mx-auto">Ao garantir sua vaga hoje, você recebe instantaneamente acesso a ferramentas de aplicação imediata.</p>
-            </div>
-
-            <div class="flex flex-col gap-24 max-w-6xl mx-auto">
-                
-                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 group" data-aos="fade-up">
-                    <div class="w-full lg:w-1/2 relative">
-                        <div class="absolute -inset-4 bg-brand-primary/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="relative bg-[#14151e] rounded-3xl border border-white/10 overflow-hidden aspect-video flex items-center justify-center shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop" alt="Bônus 01" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0b0c13] via-transparent to-transparent"></div>
-                        </div>
-                        <div class="absolute -top-8 -left-8 text-8xl font-black text-transparent stroke-white/10 opacity-20 transition-all duration-500 group-hover:opacity-40 group-hover:scale-110" style="-webkit-text-stroke: 1px;">01</div>
-                    </div>
-                    <div class="w-full lg:w-1/2 space-y-6">
-                        <div class="text-brand-primary text-xs font-black uppercase tracking-[0.3em]">Treinamento Online</div>
-                        <h3 class="text-3xl md:text-4xl font-black text-white uppercase leading-tight italic">Biomecânica em <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-brand-textSecondary">4 Passos</span></h3>
-                        <p class="text-brand-textSecondary leading-relaxed text-lg">O guia definitivo para você dominar os pilares da análise de movimento antes mesmo de chegar ao evento presencial. Conteúdo direto e aplicável.</p>
-                        <div class="inline-flex items-center gap-4 bg-white/5 border border-white/10 p-3 rounded-2xl">
-                            <span class="text-brand-textMuted text-sm line-through pl-2">R$ 297,00</span>
-                            <span class="bg-brand-primary text-white text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-lg shadow-brand-primary/20">Grátis Hoje</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20 group" data-aos="fade-up">
-                    <div class="w-full lg:w-1/2 relative">
-                        <div class="absolute -inset-4 bg-brand-primary/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="relative bg-[#14151e] rounded-3xl border border-white/10 overflow-hidden aspect-video flex items-center justify-center shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop" alt="Bônus 02" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0b0c13] via-transparent to-transparent"></div>
-                        </div>
-                        <div class="absolute -top-8 -right-8 text-8xl font-black text-transparent stroke-white/10 opacity-20 transition-all duration-500 group-hover:opacity-40 group-hover:scale-110" style="-webkit-text-stroke: 1px;">02</div>
-                    </div>
-                    <div class="w-full lg:w-1/2 space-y-6 lg:text-right flex flex-col lg:items-end">
-                        <div class="text-brand-primary text-xs font-black uppercase tracking-[0.3em]">Imersão Digital</div>
-                        <h3 class="text-3xl md:text-4xl font-black text-white uppercase leading-tight italic">Maratona da <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-brand-textSecondary">Biomecânica</span></h3>
-                        <p class="text-brand-textSecondary leading-relaxed text-lg">Acesso exclusivo às gravações das aulas avançadas sobre reabilitação e testes de força. A base científica que sustenta o seu destaque profissional.</p>
-                        <div class="inline-flex items-center gap-4 bg-white/5 border border-white/10 p-3 rounded-2xl">
-                            <span class="text-brand-textMuted text-sm line-through pl-2">R$ 197,00</span>
-                            <span class="bg-brand-primary text-white text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-lg shadow-brand-primary/20">Grátis Hoje</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 group" data-aos="fade-up">
-                    <div class="w-full lg:w-1/2 relative">
-                        <div class="absolute -inset-4 bg-brand-primary/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="relative bg-[#14151e] rounded-3xl border border-white/10 overflow-hidden aspect-video flex items-center justify-center shadow-2xl">
-                            <img src="./assets/hands.jpg" alt="Bônus 03" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0b0c13] via-transparent to-transparent"></div>
-                        </div>
-                        <div class="absolute -top-8 -left-8 text-8xl font-black text-transparent stroke-white/10 opacity-20 transition-all duration-500 group-hover:opacity-40 group-hover:scale-110" style="-webkit-text-stroke: 1px;">03</div>
-                    </div>
-                    <div class="w-full lg:w-1/2 space-y-6">
-                        <div class="text-brand-primary text-xs font-black uppercase tracking-[0.3em]">Biblioteca Científica</div>
-                        <h3 class="text-3xl md:text-4xl font-black text-white uppercase leading-tight italic">300 Artigos <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-brand-textSecondary">Curados</span></h3>
-                        <p class="text-brand-textSecondary leading-relaxed text-lg">Economize anos de estudo com nossa curadoria de artigos científicos fundamentais para prescrição de exercícios e reabilitação de lesões.</p>
-                        <div class="inline-flex items-center gap-4 bg-white/5 border border-white/10 p-3 rounded-2xl">
-                            <span class="text-brand-textMuted text-sm line-through pl-2">R$ 147,00</span>
-                            <span class="bg-brand-primary text-white text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-lg shadow-brand-primary/20">Grátis Hoje</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20 group" data-aos="fade-up">
-                    <div class="w-full lg:w-1/2 relative">
-                        <div class="absolute -inset-4 bg-brand-primary/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div class="relative bg-[#14151e] rounded-3xl border border-white/10 overflow-hidden aspect-video flex items-center justify-center shadow-2xl">
-                            <img src="./assets/ceritificado.webp" alt="Bônus 04" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#0b0c13] via-transparent to-transparent"></div>
-                        </div>
-                        <div class="absolute -top-8 -right-8 text-8xl font-black text-transparent stroke-white/10 opacity-20 transition-all duration-500 group-hover:opacity-40 group-hover:scale-110" style="-webkit-text-stroke: 1px;">04</div>
-                    </div>
-                    <div class="w-full lg:w-1/2 space-y-6 lg:text-right flex flex-col lg:items-end">
-                        <div class="text-brand-primary text-xs font-black uppercase tracking-[0.3em]">Certificação Oficial</div>
-                        <h3 class="text-3xl md:text-4xl font-black text-white uppercase leading-tight italic">Certificado de <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-brand-textSecondary">23 Horas</span></h3>
-                        <p class="text-brand-textSecondary leading-relaxed text-lg">Mais que um papel, um comprovante de autoridade. Valide sua imersão e destaque-se no mercado como um Especialista em Biomecânica.</p>
-                        <div class="inline-flex items-center gap-4 bg-white/5 border border-white/10 p-3 rounded-2xl">
-                            <span class="text-brand-textMuted text-sm line-through pl-2">Valor Inestimável</span>
-                            <span class="bg-brand-primary text-white text-[10px] font-black uppercase tracking-wider px-3 py-1.5 rounded-lg shadow-lg shadow-brand-primary/20">Grátis Hoje</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="mt-24 text-center" data-aos="zoom-in">
-                <button onclick="abrirPopup()" class="w-full sm:w-auto bg-brand-primary hover:bg-brand-primaryHover text-white font-black uppercase tracking-[0.1em] py-5 px-16 rounded-xl transition-all duration-300 shadow-[0_10px_30px_rgba(239,72,45,0.3)] hover:shadow-[0_15px_40px_rgba(255,136,21,0.5)] hover:-translate-y-1 inline-flex items-center justify-center gap-3 group">
-                    Garantir Meus Bônus Agora <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section id="depoimentos" class="py-24 bg-brand-bg relative overflow-hidden">
-        
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
-
-        <div class="container mx-auto px-6 max-w-6xl relative z-10">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-brand-primary text-xs font-bold uppercase tracking-[0.2em] mb-4">Reconhecimento</h2>
-                <h3 class="text-3xl md:text-5xl font-black uppercase text-white leading-tight italic">
-                    Conheça quem <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-primaryHover">já transformou</span> a carreira
-                </h3>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6 auto-rows-auto">
-                
-                <div class="md:col-span-6 lg:col-span-8 bg-[#0b0c13] p-8 md:p-10 rounded-3xl border border-white/5 hover:border-brand-primary/30 transition-all duration-500 shadow-2xl relative group" data-aos="fade-right">
-                    <i class="fas fa-quote-right absolute top-8 right-8 text-4xl text-brand-primary/10 group-hover:text-brand-primary/20 transition-colors"></i>
-                    
-                    <div class="flex text-brand-primary text-xs mb-6 gap-1">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    
-                    <p class="text-xl md:text-2xl text-white font-medium italic leading-relaxed mb-8">
-                        "Nunca aprendi tanto sobre biomecânica em tão pouco tempo! O conteúdo foi direto ao ponto, sem enrolação. Meus alunos estão impressionados com os novos ajustes."
-                    </p>
-                    
-                    <div class="flex items-center gap-4 mt-auto">
-                        <div class="w-12 h-12 rounded-full bg-brand-primary/20 border border-brand-primary/40 flex items-center justify-center text-brand-primary font-bold">GL</div>
-                        <div>
-                            <div class="font-bold text-white uppercase tracking-wider">Gabriel Lima</div>
-                            <div class="text-xs text-brand-primary font-bold uppercase">Coach de Performance</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="md:col-span-6 lg:col-span-4 bg-[#0b0c13] p-8 rounded-3xl border border-white/5 hover:border-brand-primary/30 transition-all duration-500 shadow-xl group" data-aos="fade-left" data-aos-delay="100">
-                    <div class="flex text-brand-primary text-[10px] mb-4 gap-1">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-brand-textSecondary text-sm italic leading-relaxed mb-6">
-                        "A biomecânica é o futuro! Esse evento me mostrou que eu estaria ficando para trás. Indico para todos!"
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-brand-primary/20 border border-brand-primary/40 flex items-center justify-center text-brand-primary font-bold text-xs">TO</div>
-                        <div>
-                            <div class="font-bold text-white text-sm">Tatiane Oliveira</div>
-                            <div class="text-[10px] text-brand-textMuted uppercase font-bold tracking-widest">Fisioterapeuta</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="md:col-span-3 lg:col-span-4 bg-[#0b0c13] p-8 rounded-3xl border border-white/5 hover:border-brand-primary/30 transition-all duration-500 shadow-xl group" data-aos="fade-up">
-                    <p class="text-brand-textSecondary text-sm italic leading-relaxed mb-6">
-                        "Um evento transformador! Minha abordagem mudou completamente após os 2 dias de imersão."
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-brand-primary/20 border border-brand-primary/40 flex items-center justify-center text-brand-primary font-bold text-xs">CM</div>
-                        <div>
-                            <div class="font-bold text-white text-sm">Carlos Menezes</div>
-                            <div class="text-[10px] text-brand-textMuted uppercase font-bold tracking-widest">Personal Trainer</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="md:col-span-3 lg:col-span-4 bg-brand-primary p-8 rounded-3xl flex flex-col items-center justify-center text-center shadow-[0_0_30px_rgba(239,72,45,0.2)] hover:scale-[1.02] transition-transform duration-300" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="text-5xl font-black text-white mb-2">+5.000</div>
-                    <div class="text-xs font-black text-black/60 uppercase tracking-widest">Profissionais Formados</div>
-                </div>
-
-                <div class="md:col-span-6 lg:col-span-4 bg-[#0b0c13] p-8 rounded-3xl border border-white/5 hover:border-brand-primary/30 transition-all duration-500 shadow-xl group" data-aos="fade-up" data-aos-delay="200">
-                    <p class="text-brand-textSecondary text-sm italic leading-relaxed mb-6">
-                        "Saí do evento muito mais confiante para atuar de forma segura e eficiente com meus alunos de alto rendimento."
-                    </p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-brand-primary/20 border border-brand-primary/40 flex items-center justify-center text-brand-primary font-bold text-xs">FR</div>
-                        <div>
-                            <div class="font-bold text-white text-sm">Fernanda Ribeiro</div>
-                            <div class="text-[10px] text-brand-textMuted uppercase font-bold tracking-widest">Reabilitação</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="mt-20 text-center" data-aos="fade-up">
-                <button onclick="abrirPopup()" class="w-full sm:w-auto bg-brand-primary hover:bg-brand-primaryHover text-white font-black uppercase tracking-[0.1em] py-5 px-12 rounded-xl transition-all duration-300 shadow-[0_10px_30px_rgba(239,72,45,0.3)] hover:shadow-[0_15px_40px_rgba(255,136,21,0.5)] hover:-translate-y-1 inline-flex items-center justify-center gap-3 group">
-                    Faça Parte deste Grupo de Elite <i class="fas fa-chevron-right text-xs group-hover:translate-x-1 transition-transform"></i>
-                </button>
             </div>
         </div>
     </section>
@@ -645,48 +441,46 @@
 
         <div class="container mx-auto px-6 max-w-7xl relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-brand-primary text-xs font-bold uppercase tracking-[0.2em] mb-4">Inscrições Abertas</h2>
-                <h3 class="text-4xl md:text-5xl font-black uppercase mb-4 text-white italic">Escolha seu <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-primaryHover">Ingresso</span></h3>
-                <p class="text-brand-textSecondary text-lg max-w-2xl mx-auto">As vagas são estritamente limitadas para garantir a qualidade da parte prática.</p>
+                <h2 class="text-brand-primary font-sans text-xs font-bold uppercase tracking-[0.2em] mb-4">Inscrições Abertas</h2>
+                <h3 class="font-oswald text-4xl md:text-6xl font-bold uppercase mb-4 text-white">Escolha seu <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-primaryHover">Ingresso</span></h3>
+                <p class="text-brand-textSecondary font-sans text-lg max-w-2xl mx-auto">As vagas são estritamente limitadas para garantir a qualidade da parte prática.</p>
             </div>
             
-            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-                
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch font-sans">
                 <div class="bg-brand-surface/30 rounded-3xl p-8 border border-white/5 opacity-40 relative overflow-hidden grayscale flex flex-col" data-aos="fade-right">
                     <div class="absolute top-6 right-[-40px] bg-red-600 text-white text-[10px] font-black uppercase tracking-widest py-1.5 px-12 rotate-45">Finalizado</div>
-                    <h3 class="text-xl font-bold text-white uppercase mb-2">Primeiro Lote</h3>
-                    <div class="text-3xl font-black text-white/50 mb-6 pb-6 border-b border-white/10 line-through">12x de 229,70</div>
+                    <h3 class="font-oswald text-2xl font-bold text-white uppercase mb-2">Lote 1</h3>
+                    <div class="font-oswald text-4xl font-bold text-white/50 mb-6 pb-6 border-b border-white/10 line-through">R$ 1.297,00</div>
                     
                     <ul class="space-y-4 text-sm text-brand-textSecondary mb-8 flex-1">
-                        <li class="flex items-center gap-2"><i class="fas fa-times-circle opacity-50"></i> Bônus físicos exclusivos</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-white/30"></i> Acesso aos 2 dias</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-white/30"></i> Certificado (23h)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-times-circle opacity-50"></i> Curso: MASTER PERFORM</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-times-circle opacity-50"></i> Curso: MAPA DA CONSULTORIA ONLINE</li>
                     </ul>
                     <button disabled class="w-full bg-white/5 text-brand-textMuted font-bold uppercase py-4 rounded-xl cursor-not-allowed">Esgotado</button>
                 </div>
 
                 <div class="bg-[#0b0c13] rounded-3xl p-8 md:p-10 border-2 border-brand-primary shadow-[0_0_50px_rgba(239,72,45,0.25)] relative transform lg:scale-105 z-10 flex flex-col ring-4 ring-brand-primary/10" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-primary to-brand-primaryHover text-white text-[10px] font-black uppercase tracking-[0.2em] py-2 px-10 rounded-full shadow-xl">Lote Atual</div>
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-primary to-brand-primaryHover text-white text-[10px] font-black uppercase tracking-[0.2em] py-2 px-10 rounded-full shadow-xl whitespace-nowrap">Lote Atual</div>
                     
                     <div class="text-center mt-6 mb-8">
-                        <h3 class="text-3xl font-black text-white uppercase mb-2 italic">Segundo Lote</h3>
+                        <h3 class="font-oswald text-4xl font-bold text-white uppercase mb-2">Lote 2</h3>
                         <p class="text-xs text-brand-primary font-bold uppercase tracking-widest">Últimas vagas disponíveis</p>
                     </div>
 
                     <div class="text-center mb-8 pb-8 border-b border-white/10">
-                        <span class="text-sm text-brand-textMuted line-through mb-1 block">De R$ 2.997,00 por</span>
-                        <div class="text-5xl font-black text-white mb-1">12x <span class="text-brand-primary">249,70</span></div>
-                        <span class="text-xs text-brand-textSecondary font-medium">ou R$ 2.497,00 à vista</span>
+                        <span class="text-sm text-brand-textMuted line-through mb-1 block">De R$ 1.997,00 por</span>
+                        <div class="font-oswald text-5xl md:text-6xl font-bold text-white mb-1"><span class="text-brand-primary">R$ 1.497,00</span></div>
+                        <span class="text-xs text-brand-textSecondary font-medium">Vagas limitadas no lote atual</span>
                     </div>
                     
                     <ul class="space-y-4 text-sm text-brand-textSecondary mb-10 flex-1">
-                        <li class="flex items-start gap-3 group"><i class="fas fa-check-circle text-brand-primary mt-1 shadow-brand-primary/50"></i> <span class="group-hover:text-white transition-colors">Acesso completo aos 2 dias</span></li>
+                        <li class="flex items-start gap-3 group"><i class="fas fa-check-circle text-brand-primary mt-1 shadow-brand-primary/50"></i> <span class="group-hover:text-white transition-colors">Acesso completo aos 2 dias de evento</span></li>
                         <li class="flex items-start gap-3 group"><i class="fas fa-check-circle text-brand-primary mt-1"></i> <span class="group-hover:text-white transition-colors">Certificado de participação (23h)</span></li>
-                        <li class="flex items-start gap-3 group"><i class="fas fa-check-circle text-brand-primary mt-1"></i> <span class="group-hover:text-white transition-colors">Coffee Break e Kit Boas-Vindas</span></li>
-                        <li class="flex items-start gap-3 group"><i class="fas fa-check-circle text-brand-primary mt-1"></i> <span class="group-hover:text-white transition-colors">Todos os 4 Bônus Exclusivos</span></li>
+                        <li class="flex items-start gap-3 group"><i class="fas fa-check-circle text-brand-primary mt-1"></i> <span class="group-hover:text-white transition-colors">Coffee Break e Kit de Boas-Vindas</span></li>
+                        <li class="flex items-start gap-3 group"><i class="fas fa-check-circle text-brand-primary mt-1"></i> <span class="group-hover:text-white transition-colors">Bônus Exclusivos de Imersão</span></li>
                     </ul>
                     
-                    <button onclick="abrirPopup()" class="w-full bg-brand-primary hover:bg-brand-primaryHover text-white font-black uppercase tracking-[0.1em] py-5 rounded-xl transition-all duration-300 shadow-[0_10px_25px_rgba(239,72,45,0.4)] hover:-translate-y-1 mb-6">
+                    <button onclick="abrirPopup()" class="w-full bg-brand-primary hover:bg-brand-primaryHover text-white font-bold uppercase tracking-[0.1em] py-5 rounded-xl transition-all duration-300 shadow-[0_10px_25px_rgba(239,72,45,0.4)] hover:-translate-y-1 mb-6">
                         Comprar Agora
                     </button>
                     
@@ -701,119 +495,68 @@
                 </div>
 
                 <div class="bg-brand-surface/30 rounded-3xl p-8 border border-white/5 relative flex flex-col opacity-60" data-aos="fade-left" data-aos-delay="200">
-                    <h3 class="text-xl font-bold text-white/50 uppercase mb-2">Terceiro Lote</h3>
-                    <div class="text-2xl font-black text-brand-textMuted mb-6 pb-6 border-b border-white/10 uppercase tracking-[0.1em]">Em Breve</div>
+                    <h3 class="font-oswald text-2xl font-bold text-white/50 uppercase mb-2">Lote 3</h3>
+                    <div class="font-oswald text-4xl font-bold text-brand-textMuted mb-6 pb-6 border-b border-white/10 uppercase tracking-[0.1em]">R$ 1.997,00</div>
                     
                     <ul class="space-y-4 text-sm text-brand-textSecondary/50 mb-8 flex-1">
                         <li class="flex items-center gap-2 font-medium italic"><i class="fas fa-lock text-[10px]"></i> Acesso aos 2 dias de evento</li>
-                        <li class="flex items-center gap-2 font-medium italic"><i class="fas fa-lock text-[10px]"></i> Certificado de 23h</li>
+                        <li class="flex items-center gap-2 font-medium italic"><i class="fas fa-lock text-[10px]"></i> Certificado de participação (23h)</li>
                     </ul>
 
                     <button disabled class="w-full bg-white/5 text-brand-textMuted font-bold uppercase py-4 rounded-xl cursor-not-allowed">Bloqueado</button>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <footer class="relative bg-[#05050a] border-t border-white/5 pt-20 pb-10 overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-brand-primary/20 to-transparent"></div>
-        
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-                
-                <div class="lg:col-span-4 space-y-8">
-                    <div class="space-y-4">
-                        <img src="./assets/logoPta.svg" alt="Personal Trainer Academy" class="h-10 w-auto brightness-110" width="120" height="40" loading="lazy">
-                        <p class="text-gray-500 text-sm leading-relaxed max-w-xs">
-                            A maior referência em formação especializada para Personal Trainers do Brasil. Ciência e prática integradas para criar líderes de mercado.
-                        </p>
-                    </div>
-                    
-                    <div class="flex items-center gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all duration-300">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all duration-300">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all duration-300">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </div>
+    <footer class="bg-brand-darkgray border-t border-white/5 pt-16 pb-24 relative z-20 font-sans">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-12">
+                <div class="lg:col-span-4 space-y-4">
+                    <a href="#" class="inline-block hover:opacity-80 transition-opacity duration-300 mb-4">
+                        <img src="./assets/logoPta.svg" alt="LOGO" class="h-10 w-auto">
+                    </a>
+                    <p class="text-gray-500 text-sm leading-relaxed max-w-sm">
+                        A maior referência em formação especializada para Personal Trainers do Brasil. Ciência e prática integradas para criar líderes de mercado.
+                    </p>
                 </div>
-
-                <div class="lg:col-span-2 lg:col-start-6">
-                    <h4 class="text-white font-bold uppercase tracking-[0.2em] text-[10px] mb-8 relative">
-                        Institucional
-                        <span class="absolute -bottom-2 left-0 w-8 h-0.5 bg-brand-primary"></span>
-                    </h4>
-                    <ul class="space-y-4 text-sm">
-                        <li><a href="#sobre" class="text-gray-500 hover:text-brand-primary transition-colors duration-200 flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-brand-primary opacity-0 group-hover:opacity-100 transition-opacity"></span> O Método</a></li>
-                        <li><a href="#conteudo" class="text-gray-500 hover:text-brand-primary transition-colors duration-200 flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-brand-primary opacity-0 group-hover:opacity-100 transition-opacity"></span> Conteúdo</a></li>
-                        <li><a href="#mentor" class="text-gray-500 hover:text-brand-primary transition-colors duration-200 flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-brand-primary opacity-0 group-hover:opacity-100 transition-opacity"></span> Mentor</a></li>
-                        <li><a href="#bonus" class="text-gray-500 hover:text-brand-primary transition-colors duration-200 flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-brand-primary opacity-0 group-hover:opacity-100 transition-opacity"></span> Bônus</a></li>
+                <div class="lg:col-span-2 lg:col-start-7">
+                    <h4 class="text-gray-300 font-bold uppercase tracking-widest text-xs mb-6 font-oswald">Navegação</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#sobre" class="hover:text-brand-primary transition-colors duration-200">A Imersão</a></li>
+                        <li><a href="#conteudo" class="hover:text-brand-primary transition-colors duration-200">Benefícios</a></li>
+                        <li><a href="#mentor" class="hover:text-brand-primary transition-colors duration-200">Especialista</a></li>
+                        <li><a href="#ingressos" class="hover:text-brand-primary transition-colors duration-200">Ingressos</a></li>
                     </ul>
                 </div>
-
                 <div class="lg:col-span-2">
-                    <h4 class="text-white font-bold uppercase tracking-[0.2em] text-[10px] mb-8 relative">
-                        Legal
-                        <span class="absolute -bottom-2 left-0 w-8 h-0.5 bg-brand-primary"></span>
-                    </h4>
-                    <ul class="space-y-4 text-sm">
-                        <li><a href="#" class="text-gray-500 hover:text-brand-primary transition-colors duration-200 flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-brand-primary opacity-0 group-hover:opacity-100 transition-opacity"></span> Termos de Uso</a></li>
-                        <li><a href="#" class="text-gray-500 hover:text-brand-primary transition-colors duration-200 flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-brand-primary opacity-0 group-hover:opacity-100 transition-opacity"></span> Privacidade</a></li>
-                        <li><a href="#" class="text-gray-500 hover:text-brand-primary transition-colors duration-200 flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-brand-primary opacity-0 group-hover:opacity-100 transition-opacity"></span> Certificação</a></li>
-                        <li><a href="#" class="text-gray-500 hover:text-brand-primary transition-colors duration-200 flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-brand-primary opacity-0 group-hover:opacity-100 transition-opacity"></span> Suporte</a></li>
+                    <h4 class="text-gray-300 font-bold uppercase tracking-widest text-xs mb-6 font-oswald">Legal</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors duration-200">Termos de Uso</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors duration-200">Política de Privacidade</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors duration-200">Aviso Legal</a></li>
                     </ul>
                 </div>
-
-                <div class="lg:col-span-3">
-                    <h4 class="text-white font-bold uppercase tracking-[0.2em] text-[10px] mb-8 relative">
-                        Fale Conosco
-                        <span class="absolute -bottom-2 left-0 w-8 h-0.5 bg-brand-primary"></span>
-                    </h4>
-                    <ul class="space-y-5 text-sm">
-                        <li class="flex items-start gap-3 text-gray-500">
-                            <i class="fas fa-map-marker-alt text-brand-primary mt-1"></i>
-                            <span>Av. Rep. Argentina, 1237<br>Água Verde, Curitiba — PR</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-phone-alt text-brand-primary"></i>
-                            <a href="tel:41999824070" class="text-gray-500 hover:text-white transition-colors">(41) 99982-4070</a>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-brand-primary"></i>
-                            <a href="mailto:contato@biomech.com.br" class="text-gray-500 hover:text-white transition-colors">contato@biomech.com.br</a>
-                        </li>
+                <div class="lg:col-span-2">
+                    <h4 class="text-gray-300 font-bold uppercase tracking-widest text-xs mb-6 font-oswald">Suporte</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="https://wa.me/5541996814165" target="_blank" class="hover:text-brand-success flex items-center gap-2 transition-colors"><i class="fab fa-whatsapp"></i> WhatsApp Suporte</a></li>
+                        <li><a href="mailto:contato@biomech.com.br" class="hover:text-white transition-colors">contato@biomech.com.br</a></li>
                     </ul>
                 </div>
             </div>
-
-            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
-                    <p class="text-gray-600 text-xs">
-                        &copy; 2026 Personal Trainer Academy. Todos os direitos reservados.
-                    </p>
-                </div>
-                
-                <div class="flex items-center gap-6">
-                    <div class="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">
-                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Site Seguro
-                    </div>
-                    <div class="flex items-center gap-3 opacity-30 grayscale">
-                        <i class="fab fa-cc-visa text-xl"></i>
-                        <i class="fab fa-cc-mastercard text-xl"></i>
-                        <i class="fab fa-pix text-lg"></i>
-                    </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-600 text-xs">
+                    &copy; 2026 Personal Trainer Academy. Todos os direitos reservados.
+                </p>
+                <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-500">
+                    <span class="w-2 h-2 rounded-full bg-brand-success animate-pulse"></span> Ambiente 100% Seguro
                 </div>
             </div>
         </div>
     </footer>
 
     <div id="popup-captura" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-[#05050A]/90 backdrop-blur-xl" aria-hidden="true">
-        
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-primary/20 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div class="relative bg-[#0d1220] border border-white/10 rounded-3xl shadow-[0_0_80px_rgba(239,72,45,0.15)] max-w-md w-full p-8 md:p-10 animate-[fadeIn_0.3s_ease-out]">
@@ -821,29 +564,26 @@
                 <i class="fas fa-times"></i>
             </button>
             
-            <div class="text-center mb-8">
+            <div class="text-center mb-8 font-sans">
                 <div class="text-brand-primary text-[10px] font-black uppercase tracking-[0.2em] mb-2">Quase lá</div>
-                <h3 class="font-black text-2xl text-white uppercase tracking-tight mb-2">Garanta sua Vaga</h3>
-                <p class="text-sm text-brand-textSecondary">Preencha os dados para liberar o Segundo Lote.</p>
+                <h3 class="font-oswald font-bold text-3xl text-white uppercase tracking-tight mb-2">Garanta sua Vaga</h3>
+                <p class="text-sm text-brand-textSecondary">Preencha os dados para liberar o Lote Atual.</p>
             </div>
             
-            <form id="form-biomechanics" class="space-y-4 mt-6 popup-form">
+            <form id="form-captura-biomechanics" class="space-y-4 mt-6 popup-form font-sans">
                 <div>
                     <label for="lead-nome" class="block text-sm font-medium text-gray-300 mb-1">Nome</label>
-                    <input type="text" id="lead-nome" name="nome" required placeholder="Seu nome completo"
-                        class="w-full px-4 py-3 rounded-lg bg-brand-bg border border-white/10 text-white placeholder-gray-500 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition">
+                    <input type="text" id="lead-nome" name="nome" required placeholder="Seu nome completo" class="w-full px-4 py-3 rounded-lg bg-brand-bg border border-white/10 text-white placeholder-gray-500 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition">
                 </div>
                 <div>
                     <label for="lead-email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
-                    <input type="email" id="lead-email" name="email" required placeholder="seu@email.com"
-                        class="w-full px-4 py-3 rounded-lg bg-brand-bg border border-white/10 text-white placeholder-gray-500 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition">
+                    <input type="email" id="lead-email" name="email" required placeholder="seu@email.com" class="w-full px-4 py-3 rounded-lg bg-brand-bg border border-white/10 text-white placeholder-gray-500 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none transition">
                 </div>
                 <div>
                     <label for="lead-phone" class="block text-sm font-medium text-gray-300 mb-1">Telefone</label>
                     <div class="flex rounded-lg overflow-hidden border border-white/10 focus-within:border-brand-primary focus-within:ring-1 focus-within:ring-brand-primary bg-brand-bg">
                         <span class="inline-flex items-center px-4 py-3 bg-brand-primary text-black font-bold select-none shrink-0">+55</span>
-                        <input type="tel" id="lead-phone" name="phone" required placeholder="(11) 99999-9999" maxlength="15" autocomplete="tel"
-                            class="flex-1 px-4 py-3 bg-transparent text-white placeholder-gray-500 outline-none min-w-0 mask-telefone">
+                        <input type="tel" id="lead-phone" name="phone" required placeholder="(11) 99999-9999" maxlength="15" autocomplete="tel" class="flex-1 px-4 py-3 bg-transparent text-white placeholder-gray-500 outline-none min-w-0 mask-telefone">
                     </div>
                     <p class="error-msg text-red-400 text-xs mt-1 hidden">Informe o DDD e o número completo.</p>
                 </div>
@@ -857,57 +597,25 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-        // Fallback para imagens 404: corrige path local ou usa placeholder
-        document.querySelectorAll('img').forEach(function(img) {
-            img.addEventListener('error', function onImgError() {
-                var s = this.getAttribute('src') || this.src || '';
-                if (s.indexOf('assets/') !== -1 || s.indexOf('logo') !== -1) {
-                    var novo = s.indexOf('./assets/') === 0 ? s.replace('./assets/', 'assets/') : s.replace(/^(.*?)(assets\/)/, '$1./$2');
-                    if (novo !== s) { this.src = novo; this.removeEventListener('error', onImgError); }
-                    return;
-                }
-                if (s.indexOf('unsplash.com') !== -1) {
-                    var w = 800, h = 600;
-                    if (s.indexOf('w=1920') !== -1) { w = 1920; h = 1080; }
-                    else if (this.className && this.className.indexOf('aspect-[4/5]') !== -1) { w = 1000; h = 1250; }
-                    this.src = 'https://picsum.photos/' + w + '/' + h + '?random=' + Math.floor(Math.random() * 10000);
-                    this.removeEventListener('error', onImgError);
-                }
-            });
-        });
+        // AOS
+        AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
 
-        // Inicializa animações de Scroll
-        AOS.init({
-            once: true,
-            offset: 50,
-            duration: 800,
-            easing: 'ease-out-cubic',
-        });
-
-        // CURSOR CUSTOMIZADO (MOUSE EFFECT)
+        // Cursor Customizado
         if (window.innerWidth >= 1024) {
             const cursor = document.getElementById('cursor');
             const cursorDot = document.getElementById('cursor-dot');
-            
             document.addEventListener('mousemove', (e) => {
                 cursorDot.style.left = e.clientX + 'px';
                 cursorDot.style.top = e.clientY + 'px';
-                
-                // Delay sutil para o aro externo
-                setTimeout(() => {
-                    cursor.style.left = e.clientX + 'px';
-                    cursor.style.top = e.clientY + 'px';
-                }, 40);
+                setTimeout(() => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; }, 40);
             });
-
-            // Hover em elementos clicáveis
             document.querySelectorAll('a, button, input').forEach(el => {
                 el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
                 el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
             });
         }
 
-        // CONTROLE DO POPUP
+        // Controle do Modal
         const popup = document.getElementById('popup-captura');
         function abrirPopup() {
             popup.classList.remove('hidden');
@@ -919,34 +627,24 @@
             popup.classList.remove('flex');
             document.body.style.overflow = '';
         }
-        popup.addEventListener('click', (e) => {
-            if (e.target === popup) fecharPopup();
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') fecharPopup();
-        });
+        popup.addEventListener('click', (e) => { if (e.target === popup) fecharPopup(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharPopup(); });
 
-        // MÁSCARA DE TELEFONE
+        // Máscara Telefone
         const telInput = document.getElementById('lead-phone');
         telInput.addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, ''); 
             if (value.startsWith('55') && value.length > 2) value = value.slice(2); 
             value = value.slice(0, 11); 
-
             let formatado = value;
-            if (value.length > 2) {
-                formatado = `(${value.slice(0, 2)}) ` + value.slice(2);
-            }
-            if (value.length > 7) {
-                formatado = formatado.slice(0, 10) + '-' + formatado.slice(10);
-            }
+            if (value.length > 2) formatado = `(${value.slice(0, 2)}) ` + value.slice(2);
+            if (value.length > 7) formatado = formatado.slice(0, 10) + '-' + formatado.slice(10);
             e.target.value = formatado;
-            
             const errorMsg = document.querySelector('.error-msg');
             if (errorMsg) errorMsg.classList.add('hidden');
         });
 
-        // CAPTURA DE UTMS
+        // Captura UTMs
         function obterUTMs() {
             const params = new URLSearchParams(window.location.search);
             return {
@@ -958,15 +656,15 @@
             };
         }
 
-        // INTEGRAÇÃO DE FORMULÁRIO (MAKE WEBHOOK + REDIRECT)
-        const form = document.getElementById('form-biomechanics');
+        // Submissão de Formulário
+        const form = document.getElementById('form-captura-biomechanics');
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const btnSubmit = this.querySelector('.btn-submit');
             const errorMsg = this.querySelector('.error-msg');
-            
             const rawPhone = telInput.value.replace(/\D/g, '');
+            
             if (rawPhone.length < 10) {
                 errorMsg.classList.remove('hidden');
                 telInput.focus();
@@ -1005,10 +703,9 @@
                     body: JSON.stringify(payload)
                 });
             } catch (error) {
-                console.error("Erro ao enviar webhook, prosseguindo com o redirecionamento.", error);
+                console.error("Erro no webhook. Redirecionando com fallback seguro.", error);
             } finally {
                 const queryString = `&name=${encodeURIComponent(nome)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(telefoneFormatado)}&utm_source=${encodeURIComponent(utms.utm_source)}&utm_term=${encodeURIComponent(utms.utm_term)}&utm_campaign=${encodeURIComponent(utms.utm_campaign)}&utm_medium=${encodeURIComponent(utms.utm_medium)}&utm_content=${encodeURIComponent(utms.utm_content)}&url=${encodeURIComponent(urlAtual)}`;
-                
                 window.location.href = BASE_REDIRECT_URL + queryString;
             }
         });
