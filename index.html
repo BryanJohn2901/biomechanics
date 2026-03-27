@@ -96,6 +96,31 @@
             background-color: rgba(239,72,45, 0.1);
             border-color: rgba(239,72,45, 0.8);
         }
+
+        /* Barra de rolagem — cores do projeto */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #EF482D #141427;
+        }
+        html::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        html::-webkit-scrollbar-track {
+            background: #141427;
+            border-radius: 9999px;
+        }
+        html::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #EF482D 0%, #c93a24 100%);
+            border-radius: 9999px;
+            border: 2px solid #141427;
+        }
+        html::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #FF8815 0%, #EF482D 100%);
+        }
+        html::-webkit-scrollbar-corner {
+            background: #141427;
+        }
     </style>
 </head>
 <body class="bg-brand-bg text-brand-textPrimary font-sans antialiased selection:bg-brand-primary selection:text-white">
