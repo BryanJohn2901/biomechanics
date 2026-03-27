@@ -767,7 +767,7 @@
             };
 
             const WEBHOOK_URL = 'https://hook.us1.make.com/k8g5jg75xqyft1snpmr8o84ydw26s1hz?produto=E-BS-J';
-            const BASE_REDIRECT_URL = 'https://wa.me/5541996814165?text=Quero%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20BS';
+            const BASE_REDIRECT_URL = 'https://chk.eduzz.com/E05NEPRD9X';
 
             try {
                 await fetch(WEBHOOK_URL, {
@@ -778,8 +778,9 @@
             } catch (error) {
                 console.error("Erro no webhook. Redirecionando com fallback seguro.", error);
             } finally {
-                const queryString = `&name=${encodeURIComponent(nome)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(telefoneFormatado)}&utm_source=${encodeURIComponent(utms.utm_source)}&utm_term=${encodeURIComponent(utms.utm_term)}&utm_campaign=${encodeURIComponent(utms.utm_campaign)}&utm_medium=${encodeURIComponent(utms.utm_medium)}&utm_content=${encodeURIComponent(utms.utm_content)}&url=${encodeURIComponent(urlAtual)}`;
-                window.location.href = BASE_REDIRECT_URL + queryString;
+                const queryString = `name=${encodeURIComponent(nome)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(telefoneFormatado)}&utm_source=${encodeURIComponent(utms.utm_source)}&utm_term=${encodeURIComponent(utms.utm_term)}&utm_campaign=${encodeURIComponent(utms.utm_campaign)}&utm_medium=${encodeURIComponent(utms.utm_medium)}&utm_content=${encodeURIComponent(utms.utm_content)}&url=${encodeURIComponent(urlAtual)}`;
+                const sep = BASE_REDIRECT_URL.includes('?') ? '&' : '?';
+                window.location.href = BASE_REDIRECT_URL + sep + queryString;
             }
         });
     </script>
