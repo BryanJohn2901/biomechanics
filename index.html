@@ -287,7 +287,7 @@
                 <div
                     class="absolute inset-0 bg-gradient-to-tr from-brand-primary/20 to-transparent rounded-3xl blur-2xl transform rotate-6">
                 </div>
-                <img src="./assets/capa.webp" alt="Prática de Biomecânica"
+                <img src="./assets/andre.webp" alt="André Albuquerque"
                     class="relative z-10 w-full rounded-3xl border border-white/10 shadow-2xl transform -rotate-2 hover:rotate-0 transition duration-500 object-cover object-top aspect-[4/5]"
                     loading="lazy">
             </div>
@@ -304,11 +304,23 @@
                 <div
                     class="absolute inset-0 bg-brand-primary/10 rounded-3xl blur-xl transform -translate-x-4 translate-y-4 transition-transform duration-500 group-hover:translate-x-0 group-hover:translate-y-0">
                 </div>
-                <div class="relative overflow-hidden rounded-3xl border border-white/5 shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=1000&auto=format&fit=crop"
-                        alt="Análise Biomecânica"
-                        class="relative object-cover w-full h-[500px] transition-transform duration-700 ease-out group-hover:scale-110"
-                        loading="lazy">
+                <div class="relative overflow-hidden rounded-3xl border border-white/5 shadow-2xl h-[500px]">
+                    <iframe id="video-sobre-frame" class="relative w-full h-full"
+                        src="https://www.youtube.com/embed/NKXHil2RQgI?rel=0&modestbranding=1"
+                        title="Biomechanics Specialist - Vídeo" loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <button id="video-sobre-capa" type="button"
+                        class="absolute inset-0 w-full h-full cursor-pointer group/video bg-black">
+                        <img src="./assets/capaVideo.webp" alt="Capa do vídeo Biomechanics Specialist"
+                            class="w-full h-full object-contain object-center">
+                        <span
+                            class="absolute inset-0 bg-black/30 group-hover/video:bg-black/20 transition-colors duration-300"></span>
+                        <span
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-[0_0_30px_rgba(239,72,45,0.6)] group-hover/video:scale-110 transition-transform duration-300">
+                            <i class="fas fa-play text-2xl ml-1"></i>
+                        </span>
+                    </button>
                 </div>
                 <div
                     class="absolute -bottom-6 -right-6 glass-strong p-6 rounded-2xl border border-white/10 shadow-xl hidden sm:block transition-transform duration-500 group-hover:scale-105">
@@ -1010,6 +1022,16 @@
             if (errorMsg) errorMsg.classList.add('hidden');
         });
 
+        // Capa personalizada do vídeo da seção "sobre"
+        const videoSobreCapa = document.getElementById('video-sobre-capa');
+        const videoSobreFrame = document.getElementById('video-sobre-frame');
+        if (videoSobreCapa && videoSobreFrame) {
+            videoSobreCapa.addEventListener('click', function () {
+                videoSobreFrame.src = 'https://www.youtube.com/embed/NKXHil2RQgI?autoplay=1&rel=0&modestbranding=1';
+                videoSobreCapa.classList.add('hidden');
+            });
+        }
+
         // Captura UTMs
         function obterUTMs() {
             const params = new URLSearchParams(window.location.search);
@@ -1060,7 +1082,7 @@
             };
 
             const WEBHOOK_URL = 'https://hook.us1.make.com/4n42ngpte48fu0mvpnh5ewi4vu3ddah4?produto=E-BS-J';
-            const BASE_REDIRECT_URL = 'https://chk.eduzz.com/E05NEPRD9X';
+            const WHATSAPP_NUMBER = '41995150570';
 
             try {
                 await fetch(WEBHOOK_URL, {
@@ -1071,9 +1093,8 @@
             } catch (error) {
                 console.error("Erro no webhook. Redirecionando com fallback seguro.", error);
             } finally {
-                const queryString = `name=${encodeURIComponent(nome)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(telefoneFormatado)}&utm_source=${encodeURIComponent(utms.utm_source)}&utm_term=${encodeURIComponent(utms.utm_term)}&utm_campaign=${encodeURIComponent(utms.utm_campaign)}&utm_medium=${encodeURIComponent(utms.utm_medium)}&utm_content=${encodeURIComponent(utms.utm_content)}&url=${encodeURIComponent(urlAtual)}`;
-                const sep = BASE_REDIRECT_URL.includes('?') ? '&' : '?';
-                window.location.href = BASE_REDIRECT_URL + sep + queryString;
+                const mensagemWhatsApp = `Olá, meu nome é ${nome}. Gostaria de saber mais sobre o Lote 1 do Biomechanic Specialist`;
+                window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagemWhatsApp)}`;
             }
         });
     </script>
